@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 import type { FormEvent } from 'react'
-import { ArrowRight, Landmark, ShieldCheck, TrendingUp } from 'lucide-react'
+import { ArrowRight, ShieldCheck, TrendingUp } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
-import { useAppState } from '../hooks/useAppState'
 import { Button } from '../components/ui/Button'
 import { Card } from '../components/ui/Card'
 import { Input } from '../components/ui/Input'
+import { useAppState } from '../hooks/useAppState'
 
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
@@ -50,9 +50,11 @@ export function LoginPage() {
       <div className="absolute inset-0 bg-hero-glow opacity-90" />
       <div className="relative mx-auto grid min-h-[calc(100vh-3rem)] max-w-7xl items-center gap-6 lg:grid-cols-[1.05fr_minmax(420px,480px)]">
         <div className="hidden rounded-[36px] border border-white/70 bg-white/75 p-8 shadow-panel backdrop-blur-xl lg:block xl:p-12">
-          <div className="flex size-16 items-center justify-center rounded-[28px] bg-brand-500 text-white shadow-float">
-            <Landmark className="size-8" />
-          </div>
+          <img
+            src="/sidebar-brand-mark.png"
+            alt="Nexus"
+            className="size-20 rounded-[28px] object-cover shadow-float"
+          />
           <div className="mt-10 max-w-xl space-y-5">
             <span className="inline-flex rounded-full bg-brand-50 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.25em] text-brand-600">
               Nexus fintech suite
@@ -70,7 +72,7 @@ export function LoginPage() {
             {[
               { icon: TrendingUp, title: 'Indicadores vivos', text: 'Resumo financeiro com leitura imediata.' },
               { icon: ShieldCheck, title: 'Fluxos validados', text: 'Depósitos e saques com verificação em memória.' },
-              { icon: ArrowRight, title: 'Mobile pensado', text: 'Navegacao touch otimizada sem improviso.' },
+              { icon: ArrowRight, title: 'Mobile pensado', text: 'Navegação touch otimizada sem improviso.' },
             ].map((item) => (
               <div key={item.title} className="rounded-[28px] bg-white p-5 shadow-panel">
                 <div className="mb-4 inline-flex rounded-2xl bg-brand-50 p-3 text-brand-600">
