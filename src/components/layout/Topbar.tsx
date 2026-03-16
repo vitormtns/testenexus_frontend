@@ -1,7 +1,10 @@
-import { Bell, CalendarRange } from 'lucide-react'
+import { Bell, CalendarRange, LogOut } from 'lucide-react'
+import { useAppState } from '../../hooks/useAppState'
 import { formatDate } from '../../lib/formatters'
 
 export function Topbar() {
+  const { logout } = useAppState()
+
   return (
     <header className="sticky top-0 z-20 border-b border-white/70 bg-[#f6f7fb]/90 px-4 py-4 backdrop-blur-xl sm:px-6 lg:px-10">
       <div className="flex items-center justify-between gap-4">
@@ -17,6 +20,14 @@ export function Topbar() {
           </div>
           <button className="rounded-2xl border border-white/80 bg-white p-3 text-slate-500 shadow-panel transition hover:text-slate-900">
             <Bell className="size-5" />
+          </button>
+          <button
+            className="rounded-2xl border border-white/80 bg-white p-3 text-slate-500 shadow-panel transition hover:text-slate-900 sm:hidden"
+            onClick={logout}
+            type="button"
+            aria-label="Sair"
+          >
+            <LogOut className="size-5" />
           </button>
           <div className="hidden size-9 items-center justify-center rounded-full bg-brand-50 text-sm font-semibold text-brand-600 shadow-panel sm:flex">
             VM
