@@ -1,61 +1,69 @@
 # Nexus Crypto Control
 
-Mini dashboard front-end para teste tecnico, inspirado na identidade visual da Nexus e focado em uma experiencia de produto real para operacoes financeiras com criptoativos.
+Mini dashboard financeiro com foco em criptoativos, desenvolvido como parte de um teste técnico de front-end. O projeto simula uma plataforma interna de operações financeiras, com atenção à organização do código, consistência visual e experiência responsiva.
 
-## Stack
+## Tech Stack
 
-- React + Vite
+- React
+- Vite
 - TypeScript
 - TailwindCSS
 - React Router DOM
 - Context API
 - Lucide React
 
-## Como rodar
+## Features
+
+- Login com validação simples e redirecionamento para o dashboard
+- Home com indicadores financeiros, últimas movimentações e saldos por ativo
+- Tela de usuários com busca, filtro por status e paginação client-side
+- Depósito com atualização de saldo e registro de movimentação em memória
+- Saque com validação de saldo suficiente e registro da operação
+- Conversão entre BRL, BTC, ETH e USDT com API real da CoinGecko
+- Estados de loading, erro e feedback visual nas principais interações
+- Layout responsivo com navegação mobile e espaçamento otimizado
+
+## Project Structure
+
+```text
+src/
+  components/   # Componentes reutilizáveis de UI e layout
+  context/      # Estado global em memória com Context API
+  hooks/        # Hooks auxiliares
+  lib/          # Utilitários e constantes
+  mocks/        # Dados locais mockados
+  pages/        # Páginas principais da aplicação
+  types/        # Tipagens compartilhadas
+```
+
+## Running Locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-Build de producao:
+## Build
 
 ```bash
 npm run build
 ```
 
-## Estrutura
+## API Usage
 
-```text
-src/
-  components/
-    layout/
-    ui/
-  context/
-  hooks/
-  lib/
-  mocks/
-  pages/
-  types/
-```
+Apenas a página **Conversão** utiliza API real, consumindo cotações da **CoinGecko**.
 
-## Telas
+Todas as demais telas utilizam **mocks locais** armazenados em `src/mocks`, sem uso de backend ou banco de dados.
 
-- Login
-- Home
-- Usuarios
-- Deposito
-- Saque
-- Conversao
+## Deployment
 
-## Regras de dados
+Vercel: `https://testenexus-frontend.vercel.app`
 
-- Apenas a tela `Conversao` usa API real via CoinGecko.
-- Todas as demais telas usam mocks locais em `src/mocks`.
-- O estado global fica em memoria com `Context API`, incluindo usuarios, movimentacoes e atualizacao de saldo por ativo.
+## Notes
 
-## Observacoes
+Este projeto foi desenvolvido para um teste técnico e prioriza:
 
-- Navegacao responsiva com sidebar no desktop e bottom navigation no mobile.
-- Deposito e saque atualizam saldos, ultima atividade e historico de movimentacoes.
-- Home combina dados mockados com valores calculados a partir do estado atual.
+- organização e escalabilidade da base
+- consistência visual da interface
+- responsividade real para desktop e mobile
+- separação clara entre dados mockados e integração externa
