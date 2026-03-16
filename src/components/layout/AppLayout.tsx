@@ -6,7 +6,7 @@ import { Topbar } from './Topbar'
 export function AppLayout({ children }: { children: ReactNode }) {
   return (
     <div className="min-h-screen bg-transparent">
-      <div className="mx-auto flex min-h-screen max-w-[1600px]">
+      <div className="flex min-h-screen">
         <Sidebar />
         <div className="flex min-h-screen flex-1 flex-col">
           <Topbar />
