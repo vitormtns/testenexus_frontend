@@ -20,7 +20,7 @@ interface MovementFormProps {
 
 const modeContent = {
   deposit: {
-    title: 'Registrar deposito',
+    title: 'Registrar depósito',
     description: 'Aumente o saldo do usuário com um fluxo simples e validado em memória.',
     icon: ArrowDownToLine,
     button: 'Confirmar depósito',
