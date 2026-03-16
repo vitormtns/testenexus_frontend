@@ -4,7 +4,7 @@ import { formatDate } from '../../lib/formatters'
 export function Topbar() {
   return (
     <header className="sticky top-0 z-20 border-b border-white/70 bg-[#f6f7fb]/90 px-4 py-4 backdrop-blur-xl sm:px-6 lg:px-10">
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4">
+      <div className="flex items-center justify-between gap-4">
         <div>
           <p className="text-sm font-medium text-slate-500">Painel interno Nexus</p>
           <h1 className="font-display text-xl font-semibold text-slate-950">Operação financeira em tempo real</h1>
