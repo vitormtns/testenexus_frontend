@@ -1,6 +1,12 @@
 # Nexus Crypto Control
 
-Mini dashboard financeiro com foco em criptoativos, desenvolvido como parte de um teste técnico de front-end. O projeto simula uma plataforma interna de operações financeiras, com atenção à organização do código, consistência visual e experiência responsiva.
+🔗 Live Demo: https://testenexus-frontend.vercel.app/
+
+Mini dashboard financeiro com foco em criptoativos, desenvolvido como parte de um teste técnico de front-end.
+
+O projeto simula uma plataforma interna de operações financeiras, com foco em organização de código, consistência visual e experiência responsiva.
+
+---
 
 ## Tech Stack
 
@@ -12,58 +18,42 @@ Mini dashboard financeiro com foco em criptoativos, desenvolvido como parte de u
 - Context API
 - Lucide React
 
+---
+
 ## Features
 
 - Login com validação simples e redirecionamento para o dashboard
-- Home com indicadores financeiros, últimas movimentações e saldos por ativo
-- Tela de usuários com busca, filtro por status e paginação client-side
-- Depósito com atualização de saldo e registro de movimentação em memória
-- Saque com validação de saldo suficiente e registro da operação
-- Conversão entre BRL, BTC, ETH e USDT com API real da CoinGecko
-- Estados de loading, erro e feedback visual nas principais interações
-- Layout responsivo com navegação mobile e espaçamento otimizado
+- Dashboard (Home) com:
+  - indicadores financeiros
+  - últimas movimentações
+  - saldos por ativo
+- Gestão de usuários com:
+  - busca por nome/email
+  - filtro por status
+  - paginação client-side
+- Depósito:
+  - atualização de saldo em memória
+  - registro de movimentação
+- Saque:
+  - validação de saldo suficiente
+  - controle de erros
+- Conversão de moedas (BRL, BTC, ETH, USDT):
+  - integração com API da CoinGecko
+  - estados de loading e erro
+- Layout responsivo:
+  - navegação mobile (bottom nav)
+  - espaçamento otimizado para leitura
+
+---
 
 ## Project Structure
 
-```text
+```bash
 src/
   components/   # Componentes reutilizáveis de UI e layout
-  context/      # Estado global em memória com Context API
+  context/      # Estado global em memória (Context API)
   hooks/        # Hooks auxiliares
   lib/          # Utilitários e constantes
   mocks/        # Dados locais mockados
-  pages/        # Páginas principais da aplicação
+  pages/        # Páginas principais
   types/        # Tipagens compartilhadas
-```
-
-## Running Locally
-
-```bash
-npm install
-npm run dev
-```
-
-## Build
-
-```bash
-npm run build
-```
-
-## API Usage
-
-Apenas a página **Conversão** utiliza API real, consumindo cotações da **CoinGecko**.
-
-Todas as demais telas utilizam **mocks locais** armazenados em `src/mocks`, sem uso de backend ou banco de dados.
-
-## Deployment
-
-Vercel: `https://testenexus-frontend.vercel.app`
-
-## Notes
-
-Este projeto foi desenvolvido para um teste técnico e prioriza:
-
-- organização e escalabilidade da base
-- consistência visual da interface
-- responsividade real para desktop e mobile
-- separação clara entre dados mockados e integração externa
